@@ -1,52 +1,25 @@
-## JS Search Highlight
+## React flex wrapper
 
-Подствечивает текст цветом и дополнительно обрезает начало текста для вывода подсветки в видимой части блока.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/NedVill/js-search-highlight/main/demo/assets/images/image.png">
-</p>
+Универсальная обертка для Flex стилей
 
 ```
-new SearchHighLighter({
-    textFields: {
-        field: {
-            text: 'search value text',
-            letterWidth: 5,
-        },
-        second_field: {
-            text: 'search value text secondary',
-            letterWidth: 7,
-        }
-    },
-    searchValue: 'value',
-    highLightColor: 'red',
-    wrapperWidth: 500,
-});
+<Flex as="ul" fullWidth gap={10}>
+    <li>element 1</li>
+    <li>element 2</li>
+    <li>element 3</li>
+</Flex>
 
-highLighted.getFieldValue("field")
-
-highLighted.getFieldValue("second_field")
-```
-
-```
-searchValue: string;
-значение, которое будем подсвечивать
-
-highLightColor: string | undefined;
-цвет подсветки
-
-minLengthToHighLight: number | undefined;
-минимальное количество символов, для начала поиска (по умолчанию 2)
-
-wrapperWidth: number | undefined;
-ширина блока, в котором содержится текст (для высчитывания обрезки текста)
-
-textFields: произвольное текстовое поле с натройками:
-
-- text: string;
-текстовое значение
-
-- letterWidth: undifined | number;
-ширина одного символа (для высчитывания обрезки текста)
-
+| Проп | Тип | Описание |
+|---|---|---|
+| `alignItems` | `aligns` | Выравнивание дочерних элементов по поперечной оси. Значения: `start`, `end`, `center`, `stretch`, `baseline`, `normal`, `inherit`. |
+| `alignSelf` | `aligns` | Выравнивание самого Flex-элемента по поперечной оси. Переопределяет `alignItems` родителя. |
+| `as` | `React.ElementType` | HTML-тег или React-компонент, в который рендерится контейнер. |
+| `fullHeight` | `boolean` | Если `true`, растягивает контейнер на всю доступную высоту. |
+| `fullWidth` | `boolean` | Если `true`, растягивает контейнер на всю доступную ширину. |
+| `gap` | `number` | Числовой отступ между дочерними элементами. |
+| `isColumn` | `boolean` | Если `true`, задаёт вертикальное направление (`flex-direction: column`). |
+| `isWrap` | `boolean` | Если `true`, разрешает перенос дочерних элементов (`flex-wrap: wrap`). |
+| `justifyContent` | `baseSpaceTypes`, `"between"`, `"around"` | Выравнивание дочерних элементов по главной оси. Значения: `start`, `end`, `center`, `stretch`, `between`, `around`. |
+| `children` | `React.ReactNode` | Содержимое Flex-контейнера. |
+| `...HTMLAttributes` | — | Стандартные HTML-атрибуты элемента, кроме `children`, пробрасываются в корневой элемент. |
 ```
